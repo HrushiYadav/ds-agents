@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project
+runs/
+logs/
+*.log
+
+# Data (keep sample data)
+data/*.csv
+data/*.xlsx
+data/*.json
+!data/sample_sales.csv

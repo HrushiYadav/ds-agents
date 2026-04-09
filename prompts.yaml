@@ -1,0 +1,158 @@
+analyzer: |
+  You are an expert data analyst.
+  Generate Python code that loads and describes the content of {filename}.
+
+  Requirements:
+  - The file can contain both unstructured or structured data.
+  - If there are many rows of structured data, print only a few examples.
+  - Print essential information: column names, dtypes, shape, basic stats.
+  - The code should be a single-file, self-contained Python program.
+  - Your response should only contain a single code block.
+  - Do not use try/except blocks — errors will be debugged separately.
+
+planner_init: |
+  You are an expert data analyst.
+  To answer factoid questions based on the given data, you must plan effectively.
+
+  Question: {question}
+
+  Available data:
+  {summaries}
+
+  Suggest your very first step to answer the question above.
+  Keep it simple — just one initial step as a good starting point.
+  Your response should only contain the initial step.
+
+planner_next: |
+  You are an expert data analyst.
+  Suggest the next step to answer the question.
+
+  Question: {question}
+
+  Available data:
+  {summaries}
+
+  Current plan:
+  {plan}
+
+  Current step: {current_step}
+
+  Results so far:
+  {result}
+
+  Suggest the next step. It does not need to be the final step,
+  but if only a simple last step remains, you may suggest it.
+  Your response should only contain the next step.
+
+coder_init: |
+  Available data:
+  {summaries}
+
+  Plan:
+  {plan}
+
+  Implement the plan with the given data.
+  Your response should be a single Python code block (wrapped in ```python```).
+
+coder_next: |
+  You are an expert data analyst.
+  Implement the next step of the plan.
+
+  Available data:
+  {summaries}
+
+  Base code:
+  ```python
+  {base_code}
+  ```
+
+  Previous plan steps:
+  {plan}
+
+  Current step to implement: {current_plan}
+
+  Build on the base code to implement the current step.
+  Your response should be a single Python code block (wrapped in ```python```).
+
+verifier: |
+  You are an expert data analyst.
+  Check whether the current plan and code implementation is sufficient to answer the question.
+
+  Question: {question}
+
+  Available data:
+  {summaries}
+
+  Plan:
+  {plan}
+
+  Current step: {current_step}
+
+  Code:
+  ```python
+  {code}
+  ```
+
+  Execution result:
+  {result}
+
+  Is this sufficient to answer the question?
+  Answer ONLY 'Yes' or 'No'.
+
+router: |
+  You are an expert data analyst.
+  The current plan is insufficient. Decide how to refine it.
+
+  Question: {question}
+
+  Available data:
+  {summaries}
+
+  Current plan:
+  {plan}
+
+  Current step: {current_step}
+
+  Results:
+  {result}
+
+  If a step is wrong, answer: "Step N" (e.g., Step 1, Step 2).
+  If a new step is needed, answer: "Add Step".
+  Your response should only be "Step N" or "Add Step".
+
+debugger: |
+  Available data files: {filenames}
+
+  Code with error:
+  ```python
+  {code}
+  ```
+
+  Error:
+  {bug}
+
+  Fix the error and provide the complete, corrected Python script.
+  Only these files are available: {filenames}
+  Your response should only contain the corrected code block.
+
+finalyzer: |
+  You are an expert data analyst.
+  Answer the factoid question using the reference code and data.
+
+  Question: {question}
+
+  Available data:
+  {summaries}
+
+  Reference code:
+  ```python
+  {code}
+  ```
+
+  Execution result:
+  {result}
+
+  Guidelines: {guidelines}
+
+  Write a final Python script that prints the answer.
+  Your response should be a single Python code block.

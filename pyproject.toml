@@ -1,0 +1,36 @@
+[project]
+name = "ds-agents"
+version = "0.1.0"
+description = "Multi-agent data science system inspired by Google's DS-STAR research — built with LangGraph and Azure OpenAI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Hrushikesh Yadav", email = "yadavhrushi64@gmail.com" }
+]
+keywords = ["data-science", "ai", "agents", "langgraph", "azure-openai", "multi-agent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain-openai>=0.3.0",
+    "langchain-core>=0.3.0",
+    "openai>=1.50.0",
+    "streamlit>=1.40.0",
+    "pandas>=2.1.0",
+    "openpyxl>=3.1.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
