@@ -8,7 +8,7 @@ analyzer: |
   - Print essential information: column names, dtypes, shape, basic stats.
   - The code should be a single-file, self-contained Python program.
   - Your response should only contain a single code block.
-  - Do not use try/except blocks — errors will be debugged separately.
+  - Do not use try/except blocks -errors will be debugged separately.
 
 planner_init: |
   You are an expert data analyst.
@@ -20,7 +20,7 @@ planner_init: |
   {summaries}
 
   Suggest your very first step to answer the question above.
-  Keep it simple — just one initial step as a good starting point.
+  Keep it simple -just one initial step as a good starting point.
   Your response should only contain the initial step.
 
 planner_next: |
